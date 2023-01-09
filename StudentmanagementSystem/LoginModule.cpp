@@ -11,12 +11,34 @@ class user
 };
 bool isValid(string username,string password)
 {
-    return true;
+    user temp;
+    ifstream ifobj;
+    ifobj.open("admin.dat",ios::binary);
+
+    while (ifobj.read(reinterpret_cast<char *>(&temp),sizeof(user)))
+    {  
+        cout<<"hello"; 
+        cout<<temp.uname<<" hiii "<<temp.pass<<endl;
+        if(ifobj.eof())
+        {
+            cout<<"reached endf  of file "<<endl;
+            break;
+        }
+        if (temp.uname==username && temp.pass==password)
+        {
+            cout<<"Login succesfully!"<<endl;
+            return true;
+        }
+           
+    }
+    cout<<"invalid username or password !"<<endl;
+    ifobj.close();
+    return false;
 }
 void saveuser()
 {
     ofstream ofs;
-    ofs.open("admin.bin",ios::app|ios::binary);
+    ofs.open("admin.dat",ios::app|ios::binary);
     user u1;
     cout<<"Enter Username :";
     getline(cin,u1.uname);
@@ -35,6 +57,12 @@ void saveuser()
 
 int main()
 {
-    saveuser();
+    // saveuser();
+    // saveuser();
+    // saveuser();
+    // saveuser();
+    isValid("nidhi","nidhijha");
+    isValid("Aman","12345678");
+    isValid("rajkiran","6464544");
     return 0;
 }
