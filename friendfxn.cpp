@@ -10,7 +10,6 @@ class Largest
 		void set_data();
 		friend void find_max(Largest);	
 };
-
 void Largest::set_data()
 {
 	cout<<"Enter the First No:";
@@ -18,9 +17,6 @@ void Largest::set_data()
 	cout<<"Enter the Second No:";
 	cin>>b;
 }
-
-
-
 void find_max(Largest t)
 {
 	if(t.a>t.b)

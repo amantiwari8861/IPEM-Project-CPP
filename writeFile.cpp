@@ -7,7 +7,7 @@ int main()
 {
     ofstream file1;
     // file1.open("Storage.txt",ios::out); // by default it  is in w mode
-    file1.open("Storage.txt",ios::app); // by default it  is in w mode
+    file1.open("Storage.bin",ios::binary | ios::app); // by default it  is in w mode
     string sentence;
     while (file1)
     {
