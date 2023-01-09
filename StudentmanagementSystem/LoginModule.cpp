@@ -1,15 +1,22 @@
 #include<iostream>
 #include<fstream>
 #include<conio.h>
+#include<cstring>
 using namespace std;
 
+void removeNewLine(char arr[])
+{
+    int i;
+    for(i=0;arr[i]!='\n';i++);
+    arr[i]='\0';
+}
 class user
 {
     public:
-    string uname;
-    string pass;
+    char uname[30];
+    char pass[9];
 };
-bool isValid(string username,string password)
+bool isValid(char username[],char password[])
 {
     user temp;
     ifstream ifobj;
@@ -17,14 +24,13 @@ bool isValid(string username,string password)
 
     while (ifobj.read(reinterpret_cast<char *>(&temp),sizeof(user)))
     {  
-        cout<<"hello"; 
-        cout<<temp.uname<<" hiii "<<temp.pass<<endl;
+        // cout<<temp.uname<<"  "<<temp.pass<<endl;
         if(ifobj.eof())
         {
             cout<<"reached endf  of file "<<endl;
             break;
         }
-        if (temp.uname==username && temp.pass==password)
+        if (!strcmp(temp.uname,username) && !strcmp(temp.pass,password))
         {
             cout<<"Login succesfully!"<<endl;
             return true;
@@ -38,18 +44,18 @@ bool isValid(string username,string password)
 void saveuser()
 {
     ofstream ofs;
-    ofs.open("admin.dat",ios::app|ios::binary);
+    ofs.open("admin.dat",ios::binary|ios::app);
     user u1;
     cout<<"Enter Username :";
-    getline(cin,u1.uname);
+    fgets(u1.uname,50,stdin);
+    removeNewLine(u1.uname);
     cout<<"Enter Password :";
-    char pass[8]={""};
     for (int i = 0; i < 8; i++)
     {
-        pass[i]=getch();
+        u1.pass[i]=getch();
         cout<<"*";
     }
-    u1.pass=pass;   
+    u1.pass[9]='\0';
     ofs.write(reinterpret_cast<char*>(&u1),sizeof(user));
     cout<<endl;
     ofs.close();
@@ -61,8 +67,12 @@ int main()
     // saveuser();
     // saveuser();
     // saveuser();
-    isValid("nidhi","nidhijha");
-    isValid("Aman","12345678");
-    isValid("rajkiran","6464544");
+    
+    char name[50]="nidhi",pass[9]="nidhijha";
+    isValid(name,pass);
+    char name2[50]="aman shukla",pass2[9]="12345678";
+    isValid(name2,pass2);
+    char name3[50]="xyz",pass3[9]="145678";
+    isValid(name3,pass3);
     return 0;
 }

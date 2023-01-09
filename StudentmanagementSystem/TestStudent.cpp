@@ -1,5 +1,5 @@
 #include "student.h"
-
+#include<cstring>
 int main()
 {
     ofstream of;
@@ -7,12 +7,12 @@ int main()
 
     student st;
     st.rollno=21;
-    st.name="Aman";
+    strcpy(st.name,"Aman Tiwari");
     st.sub[0]=100;
     st.sub[1]=50;
     st.sub[2]=1890;
 
-    of.write(&st,sizeof(student));
+    of.write(reinterpret_cast<char*>(&st),sizeof(student));
     of.close();
 
     ifstream is;

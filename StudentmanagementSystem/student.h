@@ -5,6 +5,6 @@ class student
 {
     public:
     int rollno;
-    string name;
+    char name[50];
     int sub[10];
 };
