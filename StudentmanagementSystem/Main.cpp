@@ -4,6 +4,7 @@
 #include "editStu.cpp"
 #include "delStu.cpp"
 #include "search.cpp"
+#include "sortStudent.cpp"
 
 int main()
 {
@@ -35,6 +36,7 @@ int main()
     cout << "3.edit Student !" << endl;
     cout << "4.delete Student !" << endl;
     cout<<"5.Search Student data !"<<endl;
+    cout<<"6.Sort Student data !"<<endl;
     cout << "7.Exit !" << endl;
 
     do
@@ -58,6 +60,9 @@ int main()
             break;
         case  5 :
             SearchStu();
+            break;
+        case  6 :
+            sortStudents();
             break;
         case  7 :
             exit(0);

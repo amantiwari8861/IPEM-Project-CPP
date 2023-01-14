@@ -20,7 +20,6 @@ bool isExist(int rollno)
             ifobj.close();
             return true;
         }
-           
     }
     cout<<endl<<"record doesn't exist !"<<endl;
     ifobj.close();
