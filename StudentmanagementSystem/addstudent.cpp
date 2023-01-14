@@ -23,7 +23,7 @@ void addStudent()
         } while (status);
 
         cout << "Enter Name " << endl;
-        cin>>tempstu.name;
+        cin.getline(tempstu.name,50);
 
         for (int i = 0; i < 7; i++)
         {

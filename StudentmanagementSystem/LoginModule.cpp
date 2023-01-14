@@ -55,7 +55,7 @@ void saveuser()
         u1.pass[i]=getch();
         cout<<"*";
     }
-    u1.pass[9]='\0';
+    u1.pass[8]='\0';
     ofs.write(reinterpret_cast<char*>(&u1),sizeof(user));
     cout<<endl;
     ofs.close();

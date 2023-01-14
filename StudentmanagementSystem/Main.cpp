@@ -68,5 +68,3 @@ int main()
 //sort acc to rollno,name
 //grade
 //marks acc.to sub name
-//edit 
-//delete
