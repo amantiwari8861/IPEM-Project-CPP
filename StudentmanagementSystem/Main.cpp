@@ -3,6 +3,7 @@
 #include "listStudent.cpp"
 #include "editStu.cpp"
 #include "delStu.cpp"
+#include "search.cpp"
 
 int main()
 {
@@ -10,15 +11,16 @@ int main()
     bool status;
     do
     {
-        char uname[50], pass[9];
+        char uname[50], pass[10];
         cout << "Enter Username :";
         cin.getline(uname, 50);
         cout << "Enter Password(8 digit) :";
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 9; i++)
         {
             pass[i] = getch();
             cout << "*";
         }
+        pass[9]='\0';
         status = isValid(uname, pass);
         attempt--;
     } while (attempt > 0 && status == false);
@@ -32,7 +34,8 @@ int main()
     cout << "2.view Student !" << endl;
     cout << "3.edit Student !" << endl;
     cout << "4.delete Student !" << endl;
-    cout << "5.Exit !" << endl;
+    cout<<"5.Search Student data !"<<endl;
+    cout << "7.Exit !" << endl;
 
     do
     {
@@ -54,6 +57,9 @@ int main()
             delStu();
             break;
         case  5 :
+            SearchStu();
+            break;
+        case  7 :
             exit(0);
             break;
         default:
@@ -65,6 +71,5 @@ int main()
     return 0;
 }
 //search
-//sort acc to rollno,name
-//grade
+//sort acc to rollno,
 //marks acc.to sub name

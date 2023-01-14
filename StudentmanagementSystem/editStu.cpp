@@ -22,9 +22,10 @@ void editStu()
             cout<<"\b]"<<endl;
             found=1;
             newstu.rollno=rollno;
+            cin.ignore();
             cout<<"Enter new student details :"<<endl;
             cout<<"Name -> ";
-            cin>>newstu.name;
+            cin.getline(newstu.name,50);
             cout<<"Marks -> ";
             cin>>newstu.sub[0];
 

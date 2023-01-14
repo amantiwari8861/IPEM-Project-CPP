@@ -21,7 +21,7 @@ void addStudent()
             }
 
         } while (status);
-
+        cin.ignore();
         cout << "Enter Name " << endl;
         cin.getline(tempstu.name,50);
 
