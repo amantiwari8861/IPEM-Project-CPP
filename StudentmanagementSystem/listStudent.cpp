@@ -8,8 +8,9 @@ void listStudent()
 
     if (!ifobj1)
     {
-        cout<<"Error unable to open File !!"<<endl;
-        exit(0);
+        cout<<"Student Records doesn't exist !!\n";
+        // cout<<"Error unable to open File !!"<<endl;
+        return;
     }
     
 

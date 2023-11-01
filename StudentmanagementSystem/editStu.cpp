@@ -26,9 +26,11 @@ void editStu()
             cout<<"Enter new student details :"<<endl;
             cout<<"Name -> ";
             cin.getline(newstu.name,50);
-            cout<<"Marks -> ";
-            cin>>newstu.sub[0];
-
+            for (int i = 0; i < 7; i++)
+            {
+                cout<<"Marks["<<i<<"] -> ";
+                cin>>newstu.sub[i];
+            }
             ifobj.seekp(-1*sizeof(student),ios::cur);
             ifobj.write(reinterpret_cast<char *>(&newstu),sizeof(student));
             cout<<"student record edited successfully !!"<<endl;

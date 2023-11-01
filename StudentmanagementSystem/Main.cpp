@@ -35,8 +35,8 @@ int main()
     cout << "2.view Student !" << endl;
     cout << "3.edit Student !" << endl;
     cout << "4.delete Student !" << endl;
-    cout<<"5.Search Student data !"<<endl;
-    cout<<"6.Sort Student data !"<<endl;
+    cout << "5.Search Student data !"<<endl;
+    cout << "6.Sort Student data !"<<endl;
     cout << "7.Exit !" << endl;
 
     do
@@ -65,6 +65,7 @@ int main()
             sortStudents();
             break;
         case  7 :
+            cout<<"Thank You Visit Again!!!\n";
             exit(0);
             break;
         default:

@@ -46,11 +46,11 @@ void saveuser()
     ofstream ofs;
     ofs.open("admin.dat", ios::binary | ios::app);
     user u1;
-    cout << "Enter Username :";
+    cout << "Enter Admin Username :";
     // fgets(u1.uname,50,stdin);
     // removeNewLine(u1.uname);
     cin.getline(u1.uname, 50);
-    cout << "Enter Password :";
+    cout << "Enter Admin Password :";
     for (int i = 0; i < 9; i++)
     {
         u1.pass[i] = getch();
@@ -66,8 +66,8 @@ void saveuser()
 // int main()
 // {
 //     saveuser();
-//      //check is user's data stored
-//     char name[] = "Aman", pass[] = "Aman@1234";
-//     isValid(name, pass);
+//     //check is user's data stored
+//     // char name[] = "Aman", pass[] = "Aman@1234";
+//     // isValid(name, pass);
 //     return 0;
 // }
