@@ -12,8 +12,6 @@ void listStudent()
         // cout<<"Error unable to open File !!"<<endl;
         return;
     }
-    
-
     cout<<left<<setw(30)<<"Roll No."<<setw(30)<<"Name "<<setw(60)<<"Marks"<<endl;
     while (ifobj1.read(reinterpret_cast<char *>(&stu),sizeof(student)))
     {

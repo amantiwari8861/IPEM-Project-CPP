@@ -65,9 +65,9 @@ void saveuser()
 //uncomment to add new user
 // int main()
 // {
-//     saveuser();
+//     // saveuser();
 //     //check is user's data stored
-//     // char name[] = "Aman", pass[] = "Aman@1234";
-//     // isValid(name, pass);
+//     char name[] = "Aman", pass[] = "Aman@1234";
+//     isValid(name, pass);
 //     return 0;
 // }

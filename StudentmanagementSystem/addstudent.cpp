@@ -27,7 +27,7 @@ void addStudent()
 
         for (int i = 0; i < 7; i++)
         {
-            cout << "Enter " << i << "th subject marks :" << endl;
+            cout << "Enter " << (i+1) << "th subject marks :" << endl;
             cin>>tempstu.sub[i];
         }
 
